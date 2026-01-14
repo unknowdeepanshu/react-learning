@@ -1,5 +1,6 @@
 import { Cards } from "./components/card";
 import { CTA } from "./components/cta";
+import { Footer } from "./components/footer";
 import { Hero } from "./components/hero";
 import { Imags } from "./components/image";
 import { Meet } from "./components/meet";
@@ -21,6 +22,7 @@ function App() {
         <Cards />
         <Meet />
         <CTA />
+        <Footer />
       </div>
     </>
   );
