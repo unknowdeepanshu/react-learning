@@ -4,10 +4,10 @@ export function Meet() {
       <div className="w-full bg-black py-10">
         <div className="flex gap-4 bg-black px-20">
           <div className="flex-1">
-            <h1 className="text-[3.1rem] font-bold bg-clip-text text-transparent bg-linear-to-b from-neutral-50  to-neutral-500">
+            <h1 className="bg-linear-to-b from-neutral-50 to-neutral-500 bg-clip-text text-[3.1rem] font-bold text-transparent">
               Meet Genius
             </h1>
-            <h1 className="text-[18px] mt-2 max-w-[35rem] font-bold text-neutral-500">
+            <h1 className="mt-2 max-w-[35rem] text-[18px] font-bold text-neutral-500">
               Our AI-driven assistant is designed to decode complex financial
               figures and{" "}
               <span className="text-white">illuminate key trends</span> in your
@@ -17,11 +17,11 @@ export function Meet() {
           <div className="flex-1"></div>
         </div>
         <div className="w-ful mt-20">
-          <div className="px-20 flex w-full justify-between ">
+          <div className="flex w-full justify-between px-20">
             <div className="flex w-full gap-4">
-              <div className=" flex-1 bg-neutral-800/35  rounded-3xl">
-                <div className="px-5 pt-8 flex flex-col">
-                  <div className="relative flex h-[17rem] w-full p-10 bg-neutral-900 rounded-3xl items-center justify-center">
+              <div className="flex-1 rounded-3xl bg-neutral-800/35">
+                <div className="flex flex-col px-5 pt-8">
+                  <div className="relative flex h-[17rem] w-full items-center justify-center rounded-3xl bg-neutral-900 p-10">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 504 230"
@@ -125,24 +125,24 @@ export function Meet() {
                       </div>
                     </div>
                   </div>
-                  <h1 className="text-[18px] mt-8">Smart forecasting</h1>
-                  <p className="text-[14px] text-neutral-500 py-4">
+                  <h1 className="mt-8 text-[18px]">Smart forecasting</h1>
+                  <p className="py-4 text-[14px] text-neutral-500">
                     Harness the power of Cobalt's predictive analytics to map
                     out the financial future of your business.
                   </p>
                 </div>
               </div>
 
-              <div className=" flex-1 bg-neutral-800/35  rounded-3xl">
-                <div className="px-5 pt-8 flex flex-col">
-                  <div className="relative flex flex-col h-[17rem] w-full p-10  items-center justify-center">
+              <div className="flex-1 rounded-3xl bg-neutral-800/35">
+                <div className="flex flex-col px-5 pt-8">
+                  <div className="relative flex h-[17rem] w-full flex-col items-center justify-center p-10">
                     <div className="rounded-xl bg-cyan-400/10 p-2">
-                      <div className="select-none rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-zinc-200 shadow-[inset_0px_1px_1px_theme(colors.white/30%),0px_1px_3px_theme(colors.cyan.500/35%),0px_0px_0px_1px_theme(colors.cyan.500)]">
+                      <div className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-zinc-200 shadow-[inset_0px_1px_1px_theme(colors.white/30%),0px_1px_3px_theme(colors.cyan.500/35%),0px_0px_0px_1px_theme(colors.cyan.500)] select-none">
                         Hey! How can I help you?
                       </div>
                     </div>
                     <div>
-                      <div className="bg-neutral-800 w-120 h-10 flex items-center px-4 absolute bottom-0 left-[1.5rem] p-6 justify-between rounded-[0.5rem]">
+                      <div className="absolute bottom-0 left-[1.5rem] flex h-10 w-120 items-center justify-between rounded-[0.5rem] bg-neutral-800 p-6 px-4">
                         ✨
                         <span>
                           <span className="inline">
@@ -150,14 +150,14 @@ export function Meet() {
                           </span>
                           <div className="inline-block h-5 w-px translate-y-1 bg-zinc-500"></div>
                         </span>
-                        <div className="bg-black text-white text-[0.7rem] p-2 text[12px] rounded-[0.7rem]">
+                        <div className="text[12px] rounded-[0.7rem] bg-black p-2 text-[0.7rem] text-white">
                           Ask Genius
                         </div>
                       </div>
                     </div>
                   </div>
-                  <h1 className="text-[18px] mt-8">Chat with Genius</h1>
-                  <p className="text-[14px] text-neutral-500 py-4">
+                  <h1 className="mt-8 text-[18px]">Chat with Genius</h1>
+                  <p className="py-4 text-[14px] text-neutral-500">
                     Just ask. With Genius by your side, navigating the financial
                     maze becomes intuitive and effortless.
                   </p>
