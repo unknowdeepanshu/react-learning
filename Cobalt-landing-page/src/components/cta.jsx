@@ -5,7 +5,7 @@ export function CTA(){
         className="flex flex-col items-center py-40"
         >
             <h1
-            className="text-4xl max-w-[36rem] tracking-tight text-center bg-clip-text text-transparent bg-linear-to-b from-neutral-50  to-neutral-500"
+            className="text-4xl max-w-[36rem] tracking-tight text-center bg-clip-text text-transparent bg-linear-to-b from-neutral-50  to-neutral-500 font-bold"
             >
             <span> See where financial automation can take your business.</span>
             </h1>
