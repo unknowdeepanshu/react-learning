@@ -3,7 +3,7 @@ export function Problem() {
     <>
       <div className="relative flex justify-center">
         <div className="w-full">
-          <div className="flex flex-col gap-4 bg-black px-4 py-4 pt-50 sm:px-8 md:flex-row md:px-12 lg:px-24 xl:px-40">
+          <div className="flex flex-col gap-4 bg-black px-4 py-4 pt-50 sm:px-8 md:flex-row md:px-12 lg:px-24">
             <div className="flex-1">
               <div>
                 <h1 className="max-w-2xl bg-linear-to-b from-neutral-50 to-neutral-500 bg-clip-text text-[3.1rem] font-bold text-transparent">
@@ -25,7 +25,7 @@ export function Problem() {
             </div>
           </div>
 
-          <div className="flex gap-4 bg-black px-4 pt-4 pb-2 sm:px-8 md:px-12 lg:px-24 xl:px-40">
+          <div className="flex gap-4 bg-black px-4 pt-4 pb-2 sm:px-8 md:px-12 lg:px-24">
             <div className="flex-1">
               <h1 className="max-w-2xl bg-linear-to-b from-neutral-50 to-neutral-500 bg-clip-text text-[3.1rem] font-bold text-transparent">
                 Everything you need. Nothing you don’t

@@ -9,7 +9,7 @@ export function Cards() {
     <>
       <div className="relative flex justify-center">
         <div className="w-full">
-          <div className="flex flex-col gap-4 bg-black px-4 pt-4 sm:px-8 md:px-12 lg:px-24 xl:px-40">
+          <div className="flex flex-col gap-4 bg-black px-4 pt-4 sm:px-8 md:px-12 lg:px-24">
             <div className="flex-1 md:hidden xl:flex">
               <div className="flex flex-1 flex-col gap-8 md:flex-row">
                 {/* this is one first card */}
