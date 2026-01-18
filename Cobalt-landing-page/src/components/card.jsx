@@ -3,14 +3,15 @@ import { Icon } from "../svg/icons";
 import { Keyboard } from "../svg/keyboard";
 import { List } from "../svg/list";
 import { Phone } from "../svg/phone";
+import { Phone2 } from "../svg/phone copy";
 export function Cards() {
   return (
     <>
       <div className="relative flex justify-center">
         <div className="w-full">
-          <div className="flex flex-col gap-4 bg-black px-20 pt-4 md:px-10">
+          <div className="flex flex-col gap-4 bg-black px-4 pt-4 sm:px-8 md:px-12 lg:px-24 xl:px-40">
             <div className="flex-1 md:hidden xl:flex">
-              <div className="flex flex-col gap-8 md:flex-row">
+              <div className="flex flex-1 flex-col gap-8 md:flex-row">
                 {/* this is one first card */}
                 <div className="flex-1 rounded-3xl bg-neutral-800/35">
                   <Analysis />
@@ -48,7 +49,7 @@ export function Cards() {
               </div>
             </div>
             <div className="flex-1 md:hidden xl:flex">
-              <div className="flex flex-col gap-8 md:flex-row">
+              <div className="flex flex-1 flex-col gap-8 md:flex-row">
                 {/* this one card */}
                 <div className="relative h-[30rem] flex-1 rounded-3xl bg-neutral-800/35">
                   <div class="[mask:radial-gradient(60%_60%_at_50%,rgba(0,0,0,0.9)_35%,rgba(0,0,0,0)_100%)]">
@@ -92,8 +93,9 @@ export function Cards() {
                   </div>
                 </div>
                 {/* this is one Second card */}
-                <div className="h-[30rem] flex-1 overflow-hidden rounded-3xl bg-neutral-800/35">
-                  <Phone />
+                <div className="flex flex-1 flex-col rounded-3xl bg-neutral-800/35 md:w-[24rem]">
+                  <Phone2 />
+
                   <div className="px-5 pt-4">
                     <h1 className="text-[18px]">Manage in real time</h1>
                     <p className="py-4 text-[14px] text-neutral-500">

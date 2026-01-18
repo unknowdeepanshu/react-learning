@@ -1,4 +1,4 @@
-export function Phone() {
+export function Phone2() {
   return (
     <>
       <div className="relative flex h-[24rem] items-center justify-center overflow-hidden [mask:linear-gradient(transparent,black,transparent)]">
@@ -11,21 +11,21 @@ export function Phone() {
           <path
             opacity=".3"
             d="M295.32 169.98c0-57.25-46.8-103.67-104.54-103.67-57.74 0-104.55 46.42-104.55 103.67s46.8 103.66 104.55 103.66c57.74 0 104.54-46.41 104.54-103.66Z"
-            stroke="url(#aa)"
+            stroke="white"
             stroke-width="1.5"
             stroke-miterlimit="10"
           ></path>
           <path
             opacity=".3"
             d="M330.43 169.97c0-76.34-62.4-138.22-139.4-138.22-76.98 0-139.39 61.88-139.39 138.22s62.41 138.22 139.4 138.22c76.98 0 139.4-61.88 139.4-138.22Z"
-            stroke="url(#bb)"
+            stroke="white"
             stroke-width="1.5"
             stroke-miterlimit="10"
           ></path>
           <path
             opacity=".3"
             d="M380.59 169.96c0-103.6-84.7-187.58-189.18-187.58S2.23 66.36 2.23 169.96c0 103.6 84.7 187.58 189.18 187.58s189.18-83.98 189.18-187.58Z"
-            stroke="url(#cc)"
+            stroke="white"
             stroke-width="1.5"
             stroke-miterlimit="10"
           ></path>
