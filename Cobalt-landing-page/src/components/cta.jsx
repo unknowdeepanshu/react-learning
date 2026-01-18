@@ -1,7 +1,7 @@
 export function CTA() {
   return (
     <>
-      <div className="flex flex-col items-center px-4 py-40 sm:px-8 md:px-12 lg:px-24">
+      <div className="flex flex-col items-center px-4 py-40 sm:px-8 md:px-12 lg:px-8">
         <h1 className="max-w-[36rem] bg-linear-to-b from-neutral-50 to-neutral-500 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent">
           <span> See where financial automation can take your business.</span>
         </h1>

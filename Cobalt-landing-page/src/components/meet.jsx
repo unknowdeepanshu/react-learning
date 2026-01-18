@@ -5,7 +5,7 @@ export function Meet() {
     <>
       <div className="relative flex justify-center">
         <div className="w-full py-10">
-          <div className="flex gap-4 bg-black px-4 pt-4 pb-2 sm:px-8 md:px-12 lg:px-24">
+          <div className="flex gap-4 bg-black px-4 pt-4 pb-2 sm:px-8 md:px-12 lg:px-8">
             <div className="flex-1">
               <h1 className="max-w-2xl bg-linear-to-b from-neutral-50 to-neutral-500 bg-clip-text text-[3.1rem] font-bold text-transparent">
                 Meet Genius
@@ -19,7 +19,7 @@ export function Meet() {
             </div>
           </div>
           <div className="mt-20 w-full">
-            <div className="relative flex w-full justify-between px-4 sm:px-8 md:px-12 lg:px-24">
+            <div className="relative flex w-full justify-between px-4 sm:px-8 md:px-12 lg:px-8">
               <div className="flex flex-1 flex-col gap-4 lg:flex-row">
                 <div className="flex-1 rounded-3xl bg-neutral-800/35">
                   <div className="flex flex-col px-5 pt-8">

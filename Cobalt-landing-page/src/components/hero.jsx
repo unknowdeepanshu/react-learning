@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <>
       <div className="relative flex justify-center">
-        <div className="mt-[10rem] flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-24">
+        <div className="mt-[10rem] flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-8">
           <h1 className="max-w-4xl bg-linear-to-b from-neutral-50 to-neutral-500 bg-clip-text text-center text-8xl tracking-tight text-transparent">
             <span> Unleash the power of intuitive finance</span>
           </h1>

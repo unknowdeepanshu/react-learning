@@ -2,7 +2,7 @@ export function Footer() {
   return (
     <>
       <div className="mb-10 w-full">
-        <div className="flex w-full flex-col gap-4 px-4 sm:px-8 md:px-12 lg:px-24">
+        <div className="flex w-full flex-col gap-4 px-4 sm:px-8 md:px-12 lg:px-8">
           <div className="w-inherit h-px bg-blue-400"></div>
           <div className="flex-1">
             <div className="flex flex-col-reverse items-center justify-between gap-3 text-[1rem] text-neutral-400 md:flex-row">

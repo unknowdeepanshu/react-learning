@@ -18,7 +18,7 @@ function App() {
             <Navbar />
           </nav>
 
-          <section className="mx-auto max-w-7xl p-6 py-16 md:py-24 lg:px-8">
+          <section className="mx-auto max-w-7xl py-16">
             <Hero />
             <Imags />
             <Problem />
