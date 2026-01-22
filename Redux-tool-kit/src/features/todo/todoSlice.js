@@ -5,13 +5,13 @@ const initialState = {
 };
 
 export const todoSlice = createSlice({
-  name: "todo",
+  name: "todos",
   initialState,
   reducers: {
     addTodo: (state, action) => {
       const todo = {
         id: nanoid(),
-        text: action.payload.text,
+        text: action.payload,
       };
       state.todos.push(todo);
     },

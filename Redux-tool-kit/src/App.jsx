@@ -1,8 +1,12 @@
+import AddTodo from "./components/Addtodo";
+import Todos from "./components/Todo";
+
 function App() {
   return (
     <>
-      <div>
-        <h1>Redux Tool Kit Sample Project</h1>
+      <div className="flex w-full flex-col px-44">
+        <AddTodo />
+        <Todos />
       </div>
     </>
   );
