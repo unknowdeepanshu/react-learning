@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-primary: #334947;
+  --color-bgprimary: #273435;
+  --color-navline: #202d2f;
+  --color-30blue: #222940;
+  --color-search: #293541;
+  --color-bghover: #2d403f;
+  --color-10blue: #00c6c0;
+  --color-60sencondary: #1d2021;
+  --color-cardbtn: #133e3a;
+  --color-Cline: #518b88;
+}
