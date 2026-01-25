@@ -4,6 +4,8 @@ import Login from "./components/login/login";
 import Card from "./components/product card/card";
 import Profile from "./components/profile/profile";
 import Singleproduct from "./components/single product page/singleProduct";
+import Totalprice from "./components/total price/totalprice";
+
 function App() {
   // const [data, setdata] = useState("");
   // const [count, setCount] = useState(0);
@@ -57,7 +59,7 @@ function App() {
     <>
       <div className="flex h-screen w-full flex-col">
         <Header />
-        <Profile />
+        <Totalprice />
         <Footer />
       </div>
     </>
