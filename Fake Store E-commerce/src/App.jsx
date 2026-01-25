@@ -4,6 +4,7 @@ import Login from "./components/login/login";
 import Card from "./components/product card/card";
 import Profile from "./components/profile/profile";
 import Singleproduct from "./components/single product page/singleProduct";
+import Cartproduct from "./components/total price/option/cart/cart product/cartproduct";
 import Totalprice from "./components/total price/totalprice";
 
 function App() {
