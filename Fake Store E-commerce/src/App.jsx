@@ -5,6 +5,8 @@ import Card from "./components/product card/card";
 import Profile from "./components/profile/profile";
 import Singleproduct from "./components/single product page/singleProduct";
 import Cartproduct from "./components/total price/option/cart/cart product/cartproduct";
+import Shipproduct from "./components/total price/shiping/cart product/shipproduct";
+import Shipping from "./components/total price/shiping/shiping";
 import Totalprice from "./components/total price/totalprice";
 
 function App() {
@@ -63,6 +65,8 @@ function App() {
         <Totalprice />
         <Footer />
       </div>
+
+      {/* <Shipping /> */}
     </>
   );
 }

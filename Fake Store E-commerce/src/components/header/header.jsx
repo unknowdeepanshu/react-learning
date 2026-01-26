@@ -1,3 +1,4 @@
+import { IconGardenCart } from "@tabler/icons-react";
 function Header() {
   return (
     <>
@@ -29,7 +30,8 @@ function Header() {
                 Shop
               </a>
             </div>
-            <button className="hover:bg-bgprimary hover:text-10blue bg-bghover rounded-md p-2 px-10 text-white hover:cursor-pointer">
+            <button className="hover:bg-bgprimary hover:text-10blue bg-bghover flex items-center gap-2 rounded-md p-2 px-10 text-white hover:cursor-pointer">
+              <IconGardenCart stroke={1.5} />
               Your cart
             </button>
             <div className="h-10 w-10 rounded-3xl bg-white"></div>

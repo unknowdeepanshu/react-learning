@@ -21,13 +21,13 @@ function Login() {
               <input
                 type="text"
                 placeholder="Username"
-                class="peer border-Cline focus:border-10blue mt-4 w-2xs border-b bg-inherit py-1 text-white transition-colors focus:border-b-2 focus:outline-none"
+                className="peer border-Cline focus:border-10blue mt-4 w-2xs border-b bg-inherit py-1 text-white transition-colors focus:border-b-2 focus:outline-none"
               />
 
               <input
                 type="text"
                 placeholder="Password"
-                class="peer border-Cline focus:border-10blue mt-4 w-2xs border-b bg-inherit py-1 text-white transition-colors focus:border-b-2 focus:outline-none"
+                className="peer border-Cline focus:border-10blue mt-4 w-2xs border-b bg-inherit py-1 text-white transition-colors focus:border-b-2 focus:outline-none"
               />
             </div>
             <div className="mt-10 flex flex-col items-center">
