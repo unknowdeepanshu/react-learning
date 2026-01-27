@@ -1,3 +1,4 @@
+import Allproduct from "./components/allproduct/listproduct";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
 import Login from "./components/login/login";
@@ -62,7 +63,7 @@ function App() {
     <>
       <div className="flex h-screen w-full flex-col">
         <Header />
-        <Totalprice />
+        <Allproduct />
         <Footer />
       </div>
 

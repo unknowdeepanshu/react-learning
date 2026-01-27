@@ -5,7 +5,9 @@ function Card() {
         <img src="/logo.png" className="bg-white" />
         <h1 className="text-[16px] text-white"> product title</h1>
         <div className="w-10">
-          <button className="bg-cardbtn rounded-md p-1 text-white">$300</button>
+          <button className="bg-cardbtn hover:bg-bgprimary cursor-pointer rounded-md p-1 text-white">
+            $300
+          </button>
         </div>
       </div>
     </>
