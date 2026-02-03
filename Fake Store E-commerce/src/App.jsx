@@ -51,12 +51,12 @@ function App() {
           />
         ))}
       </div>
-      {/* <img
+      <img
         src={data}
         width="300rem"
         height="300rem"
         className="border-8 border-indigo-600 p-10"
-      /> */}
+      />
     </>
   );
   return (
