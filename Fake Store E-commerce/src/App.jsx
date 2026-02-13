@@ -10,6 +10,8 @@ import Shipproduct from "./components/total price/shiping/cart product/shipprodu
 import Shipping from "./components/total price/shiping/shiping";
 import Totalprice from "./components/total price/totalprice";
 
+import { useState, useEffect } from "react";
+
 function App() {
   const [data, setdata] = useState("");
   const [count, setCount] = useState(0);
@@ -18,7 +20,7 @@ function App() {
 
   async function findproduct() {
     const datas = await fetch(
-      "https://dummyjson.com/products?limit=500&select=availabilityStatus,brand,category,description,discountPercentage,images,price,rating,returnPolicy,reviews,stock,shippingInformation,tags,thumbnail,tags",
+      "https://dummyjson.com/products?limit=500&select=availabilityStatus,brand,category,description,title,discountPercentage,images,price,rating,returnPolicy,reviews,stock,shippingInformation,tags,thumbnail,tags",
     ).then((response) => response.json());
     console.log("this is data new", datas);
     const allproduct = datas.products;
@@ -57,17 +59,6 @@ function App() {
         height="300rem"
         className="border-8 border-indigo-600 p-10"
       />
-    </>
-  );
-  return (
-    <>
-      <div className="flex h-screen w-full flex-col">
-        <Header />
-        <Allproduct />
-        <Footer />
-      </div>
-
-      {/* <Shipping /> */}
     </>
   );
 }

@@ -4,19 +4,30 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Layout from "./layout.jsx";
 import Allproduct from "./components/allproduct/listproduct.jsx";
+import Totalprice from "./components/total price/totalprice.jsx";
+import Singleproduct from "./components/single product page/singleProduct.jsx";
+import App from "./App.jsx";
+import { Provider } from "react-redux";
+import { store } from "./app/store.js";
+import AppInitializer from "./getdata.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-      {
-        path: "",
-        element: <Allproduct />,
-      },
+      { path: "", element: <Allproduct /> },
+      { path: "/product", element: <Totalprice /> },
+      { path: "/single", element: <Singleproduct /> },
+      { path: "/app", element: <App /> },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />,
+  <Provider store={store}>
+    <AppInitializer>
+      <RouterProvider router={router} />
+    </AppInitializer>
+  </Provider>,
 );
