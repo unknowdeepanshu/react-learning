@@ -92,24 +92,28 @@ function Allproduct() {
                     </summary>
 
                     <article class="px-4 pb-4">
-                      <ul class="mt-4 flex flex-col gap-4 pl-2">
-                        <li class="flex flex-col gap-2">
-                          <div className="flex items-center gap-3">
-                            <input
-                              type="radio"
-                              className="accent-bghover h-4 w-4"
-                            />
-                            <label>In stock</label>
-                          </div>
-                          <div className="flex items-center gap-3">
-                            <input
-                              type="radio"
-                              className="accent-bghover h-4 w-4"
-                            />
-                            <label>Out stock</label>
-                          </div>
-                        </li>
-                      </ul>
+                      <form>
+                        <ul class="mt-4 flex flex-col gap-4 pl-2">
+                          <li class="flex flex-col gap-2">
+                            <div className="flex items-center gap-3">
+                              <input
+                                type="radio"
+                                name="stockStatus"
+                                className="accent-bghover h-4 w-4"
+                              />
+                              <label>In stock</label>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <input
+                                type="radio"
+                                name="stockStatus"
+                                className="accent-bghover h-4 w-4"
+                              />
+                              <label>Out stock</label>
+                            </div>
+                          </li>
+                        </ul>
+                      </form>
                     </article>
                   </details>
                 </li>
@@ -132,6 +136,7 @@ function Allproduct() {
                           {tags.map((tag) => (
                             <div className="flex items-center gap-3">
                               <input
+                                name="tag"
                                 type="radio"
                                 className="accent-bghover h-4 w-4"
                               />
@@ -159,7 +164,7 @@ function Allproduct() {
                   ))}
                 </div>
               </div>
-              paggination
+              {/* paggination */}
               <div className="self-end">
                 <ol className="flex justify-center space-x-1 text-xs font-medium text-white">
                   <li>
