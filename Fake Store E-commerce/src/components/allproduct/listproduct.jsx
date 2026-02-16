@@ -1,15 +1,28 @@
-import {
-  IconChevronRight,
-  IconChevronDown,
-  IconChevronLeft,
-} from "@tabler/icons-react";
 import Card from "../product card/card";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router";
+import { useState } from "react";
+import Filter from "./filter/filters";
+import Paggination from "./paggination/pagginations";
+import Products from "./products/produc";
 
 function Allproduct() {
+  const [stock, setStock] = useState("All");
   const data = useSelector((state) => state.product);
-  if (data.product.products) console.log(data.product.products);
-  const goods = data.product.products;
+  // if (data.product.products) console.log(data.product.products);
+  let goods = data.product.products;
+  // in stock in goods
+  if (stock === "All stock") {
+    return goods;
+  } else if (stock === "Low Stock") {
+    goods = goods.filter((good) => {
+      return good.availabilityStatus.includes(stock);
+    });
+  } else if (stock === "In Stock") {
+    goods = goods.filter((good) => {
+      return good.availabilityStatus.includes(stock);
+    });
+  }
 
   const tags = [...new Set(goods.flatMap((good) => good.tags))].map((tag) => ({
     name: tag,
@@ -39,163 +52,16 @@ function Allproduct() {
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="flex">
             <div className="w-50 p-3 text-white">
-              <ul className="mx-auto flex max-w-[280px] flex-col gap-1">
-                <li>
-                  <details className="group">
-                    <summary className="flex flex-col items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
-                      <div className="flex w-full flex-1 justify-between">
-                        <span className="flex gap-2">
-                          <span>Price range</span>
-                        </span>
-                        <IconChevronDown />
-                      </div>
-
-                      <hr className="border-Cline relative bottom-2 w-full flex-1 border-2"></hr>
-                    </summary>
-
-                    <article className="pb-4">
-                      <ul className="mt-2 flex flex-col gap-4 pl-2">
-                        <li className="flex gap-2">
-                          <div className="flex flex-1 flex-col">
-                            <div className="flex justify-between">
-                              <span className="ml-3">min</span>
-                              <span className="mr-3">max</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <input
-                                type="number"
-                                className="w-18 border-2 border-solid border-[#2D403F] bg-[#2D403F] p-2 text-white transition-colors duration-100 outline-none focus:border-[#2D403F]"
-                                placeholder="0"
-                              />
-                              <input
-                                type="number"
-                                className="w-18 border-2 border-solid border-[#2D403F] bg-[#2D403F] p-2 text-white transition-colors duration-100 outline-none focus:border-[#2D403F]"
-                                placeholder="1000"
-                              />
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </article>
-                  </details>
-                </li>
-                <li>
-                  <details class="group">
-                    <summary class="flex flex-col items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
-                      <div className="flex w-full flex-1 justify-between">
-                        <span class="flex gap-2">
-                          <span>Stock status</span>
-                        </span>
-                        <IconChevronDown />
-                      </div>
-                      <hr className="border-Cline relative bottom-2 w-full flex-1 border-2"></hr>
-                    </summary>
-
-                    <article class="px-4 pb-4">
-                      <form>
-                        <ul class="mt-4 flex flex-col gap-4 pl-2">
-                          <li class="flex flex-col gap-2">
-                            <div className="flex items-center gap-3">
-                              <input
-                                type="radio"
-                                name="stockStatus"
-                                className="accent-bghover h-4 w-4"
-                              />
-                              <label>In stock</label>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <input
-                                type="radio"
-                                name="stockStatus"
-                                className="accent-bghover h-4 w-4"
-                              />
-                              <label>Out stock</label>
-                            </div>
-                          </li>
-                        </ul>
-                      </form>
-                    </article>
-                  </details>
-                </li>
-                <li>
-                  <details class="group">
-                    <summary class="flex flex-col items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
-                      <div className="flex w-full flex-1 justify-between">
-                        <span class="flex gap-2">
-                          <span>Category</span>
-                        </span>
-                        <IconChevronDown />
-                      </div>
-
-                      <hr className="border-Cline relative bottom-2 w-full flex-1 border-2"></hr>
-                    </summary>
-
-                    <article class="px-4 pb-4">
-                      <ul class="mt-4 flex flex-col gap-4 pl-2">
-                        <li class="flex flex-col gap-2">
-                          {tags.map((tag) => (
-                            <div className="flex items-center gap-3">
-                              <input
-                                name="tag"
-                                type="radio"
-                                className="accent-bghover h-4 w-4"
-                              />
-                              <label>{tag.name}</label>
-                            </div>
-                          ))}
-                        </li>
-                      </ul>
-                    </article>
-                  </details>
-                </li>
-              </ul>
+              <Filter list={tags} stock={stock} onStockChange={setStock} />
             </div>
             <div className="border-10blue relative bottom-8 border-l-4"></div>
             <div className="flex flex-1 flex-col">
               <div className="flex-1 p-4">
                 <div className="flex flex-wrap gap-2">
-                  {goods.map((good) => (
-                    <Card
-                      Title={good.title}
-                      src={good.images[0]}
-                      dollar={good.price}
-                      key={good.id}
-                    />
-                  ))}
+                  <Products product={goods} />
                 </div>
               </div>
-              {/* paggination */}
-              <div className="self-end">
-                <ol className="flex justify-center space-x-1 text-xs font-medium text-white">
-                  <li>
-                    <a
-                      href="/?page=1"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100"
-                    >
-                      <IconChevronLeft stroke={2} />
-                    </a>
-                  </li>
-
-                  {number.map((nums) => (
-                    <li>
-                      <a
-                        href="/?page=1"
-                        className="block h-8 w-8 rounded border border-gray-100 text-center leading-8"
-                      >
-                        {nums.num}
-                      </a>
-                    </li>
-                  ))}
-                  <li>
-                    <a
-                      href="/?page=3"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100"
-                    >
-                      <IconChevronRight stroke={2} />
-                    </a>
-                  </li>
-                </ol>
-              </div>
+              <Paggination num={number} />
             </div>
           </div>
         </div>

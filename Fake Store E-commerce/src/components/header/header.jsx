@@ -1,4 +1,6 @@
 import { IconGardenCart, IconUser } from "@tabler/icons-react";
+import { Link } from "react-router";
+
 function Header() {
   return (
     <>
@@ -16,19 +18,19 @@ function Header() {
           </div>
           <div className="flex flex-1 items-center justify-end gap-8">
             <div className="flex">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="hover:text-10blue mx-2 mr-8 text-[14px] text-white"
               >
                 Home
-              </a>
+              </Link>
               <div className="bg-navline w-px"></div>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="hover:text-10blue mx-2 ml-8 text-[14px] text-white"
               >
                 Shop
-              </a>
+              </Link>
             </div>
             <button className="hover:bg-bgprimary hover:text-10blue bg-bghover flex items-center gap-2 rounded-md p-2 px-10 text-[14px] text-white hover:cursor-pointer">
               <IconGardenCart stroke={1.5} />
