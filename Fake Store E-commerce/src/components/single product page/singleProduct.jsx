@@ -1,13 +1,18 @@
 import { Link, useParams } from "react-router";
 import Card from "../product card/card";
-
 import { useDispatch, useSelector } from "react-redux";
+import { addProduct, removeProduct } from "../../features/product";
 
 function Singleproduct() {
+  const dispatch = useDispatch();
+
+  //use select from useSelector to get the product and user data from the store
   const AllProduct = useSelector((state) => state.product.product.products);
-  console.log("single", AllProduct);
+  const userProducts = useSelector((state) => state.product.user);
+
+  console.log("user product", userProducts);
   const { name } = useParams();
-  console.log(name);
+  // console.log(name);
   const singleProduct = AllProduct.find((goods) => goods.title === name);
   const tags = singleProduct.tags;
   let randomIndex = 0;
@@ -20,16 +25,16 @@ function Singleproduct() {
 
   const selectedTag = tags[randomIndex];
 
-  console.log("seleced tag", selectedTag);
-  console.log("tagss length", randomIndex);
+  // console.log("seleced tag", selectedTag);
+  // console.log("tagss length", randomIndex);
   const someProduct = AllProduct.filter(
     (goods) =>
       goods.tags?.includes(selectedTag) && goods.title !== singleProduct.title,
   );
 
-  console.log("this ", someProduct);
+  // console.log("this ", someProduct);
 
-  console.log("check", singleProduct);
+  // console.log("check", singleProduct);
   if (!singleProduct) return <h1>Loading...</h1>;
 
   return (
@@ -46,10 +51,16 @@ function Singleproduct() {
               <h3 className="min-h-fit pr-60">{singleProduct.description}</h3>
               <h2 className="text-3xl">${singleProduct.price}</h2>
               <div className="flex w-48 flex-col gap-2">
-                <button className="bg-30blue rounded-3xl p-2 hover:cursor-pointer">
+                <button
+                  onClick={(e) => dispatch(addProduct(singleProduct))}
+                  className="bg-30blue rounded-3xl p-2 hover:cursor-pointer"
+                >
                   Add To Cart
                 </button>
-                <button className="bg-30blue rounded-3xl p-2 hover:cursor-pointer">
+                <button
+                  onClick={(e) => dispatch(removeProduct(singleProduct.id))}
+                  className="bg-30blue rounded-3xl p-2 hover:cursor-pointer"
+                >
                   Buy now
                 </button>
               </div>

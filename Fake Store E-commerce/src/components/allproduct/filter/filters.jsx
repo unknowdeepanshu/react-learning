@@ -3,7 +3,7 @@ import {
   IconChevronDown,
   IconChevronLeft,
 } from "@tabler/icons-react";
-function Filter({ list, onStockChange, stock }) {
+function Filter({ list, onStockChange, stock, onTagChange }) {
   return (
     <>
       <ul className="mx-auto flex max-w-[280px] flex-col gap-1">
@@ -100,14 +100,26 @@ function Filter({ list, onStockChange, stock }) {
             <article class="px-4 pb-4">
               <ul class="mt-4 flex flex-col gap-4 pl-2">
                 <li class="flex flex-col gap-2">
-                  {list.map((tag) => (
+                  <div className="flex items-center gap-3">
+                    <input
+                      name="tag"
+                      type="radio"
+                      value="All"
+                      onChange={(e) => onTagChange(e.target.value)}
+                      className="accent-bghover h-4 w-4"
+                    />
+                    <label>All</label>
+                  </div>
+                  {list.map((Tag) => (
                     <div className="flex items-center gap-3">
                       <input
                         name="tag"
                         type="radio"
+                        value={Tag.name}
+                        onChange={(e) => onTagChange(e.target.value)}
                         className="accent-bghover h-4 w-4"
                       />
-                      <label>{tag.name}</label>
+                      <label>{Tag.name}</label>
                     </div>
                   ))}
                 </li>

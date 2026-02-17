@@ -1,32 +1,22 @@
-import Card from "../product card/card";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router";
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Filter from "./filter/filters";
 import Paggination from "./paggination/pagginations";
 import Products from "./products/produc";
 
 function Allproduct() {
   const [stock, setStock] = useState("All");
+  const [tag, setTag] = useState("All");
+  const [tagArray, setTagArray] = useState([]);
   const data = useSelector((state) => state.product);
   // if (data.product.products) console.log(data.product.products);
   let goods = data.product.products;
-  // in stock in goods
-  if (stock === "All stock") {
-    return goods;
-  } else if (stock === "Low Stock") {
-    goods = goods.filter((good) => {
-      return good.availabilityStatus.includes(stock);
-    });
-  } else if (stock === "In Stock") {
-    goods = goods.filter((good) => {
-      return good.availabilityStatus.includes(stock);
-    });
-  }
 
-  const tags = [...new Set(goods.flatMap((good) => good.tags))].map((tag) => ({
-    name: tag,
-  }));
+  const tagsList = [...new Set(goods.flatMap((good) => good.tags))].map(
+    (tag) => ({
+      name: tag,
+    }),
+  );
 
   const number = [
     {
@@ -36,7 +26,35 @@ function Allproduct() {
       num: "2",
     },
   ];
+  if (!goods) return;
 
+  let filtered = goods;
+  useEffect(() => {
+    // filter by tag
+    if (tag !== "All") {
+      filtered = filtered.filter((good) => good.tags?.includes(tag));
+    } else {
+      filtered = goods.filter((good) => {
+        return good.tags.find((t) => t === tag);
+      });
+    }
+
+    // filter by stock
+    if (stock !== "All") {
+      filtered = filtered.filter((good) =>
+        good.availabilityStatus?.includes(stock),
+      );
+    } else if (stock === "Low Stock") {
+      filtered = goods.filter((good) => {
+        return good.availabilityStatus.includes(stock);
+      });
+    } else if (stock === "In Stock") {
+      filtered = goods.filter((good) => {
+        return good.availabilityStatus.includes(stock);
+      });
+    }
+    setTagArray(filtered);
+  }, [goods, tag, stock]);
   return (
     <>
       <div className="bg-60sencondary">
@@ -52,13 +70,18 @@ function Allproduct() {
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="flex">
             <div className="w-50 p-3 text-white">
-              <Filter list={tags} stock={stock} onStockChange={setStock} />
+              <Filter
+                onTagChange={setTag}
+                list={tagsList}
+                stock={stock}
+                onStockChange={setStock}
+              />
             </div>
             <div className="border-10blue relative bottom-8 border-l-4"></div>
             <div className="flex flex-1 flex-col">
               <div className="flex-1 p-4">
                 <div className="flex flex-wrap gap-2">
-                  <Products product={goods} />
+                  <Products product={goods} TagArray={tagArray} stock={stock} />
                 </div>
               </div>
               <Paggination num={number} />

@@ -32,10 +32,13 @@ function Header() {
                 Shop
               </Link>
             </div>
-            <button className="hover:bg-bgprimary hover:text-10blue bg-bghover flex items-center gap-2 rounded-md p-2 px-10 text-[14px] text-white hover:cursor-pointer">
+            <Link
+              to="/you-cart"
+              className="hover:bg-bgprimary hover:text-10blue bg-bghover flex items-center gap-2 rounded-md p-2 px-10 text-[14px] text-white hover:cursor-pointer"
+            >
               <IconGardenCart stroke={1.5} />
               Your cart
-            </button>
+            </Link>
             <button className="hover:border-10blue flex h-8 w-8 cursor-pointer justify-center rounded-3xl bg-white p-1 hover:border-2">
               {" "}
               <IconUser stroke={1} />
