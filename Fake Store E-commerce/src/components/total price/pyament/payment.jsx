@@ -47,17 +47,20 @@ function Payment({ page }) {
                       type="text"
                       className="border-bghover focus:border-bghover bg-bghover/50 flex-1 rounded-md border-2 p-2 text-white transition-colors focus:outline-none"
                       placeholder="0000 0000 0000 0000"
+                      disabled={true}
                     />
                     <div className="flex gap-4">
                       <input
                         type="text"
                         className="border-bghover focus:border-bghover bg-bghover/50 w-24 rounded-md border-2 p-2 text-white transition-colors focus:outline-none"
                         placeholder="MM/YY"
+                        disabled={true}
                       />
                       <input
                         type="text"
                         className="border-bghover focus:border-bghover bg-bghover/50 w-20 rounded-md border-2 p-2 text-white transition-colors focus:outline-none"
                         placeholder="CVV"
+                        disabled={true}
                       />
                     </div>
                   </div>
@@ -65,6 +68,7 @@ function Payment({ page }) {
                     type="text"
                     className="border-bghover focus:border-bghover bg-bghover/50 flex-1 rounded-md border-2 p-2 text-white transition-colors focus:outline-none"
                     placeholder="Address 2"
+                    disabled={true}
                   />
                 </div>
               </div>
@@ -74,7 +78,7 @@ function Payment({ page }) {
         <hr className="border-10blue"></hr>
         <div className="flex gap-3">
           <button
-            onClick={() => page("cart")}
+            onClick={() => page("shipping")}
             className="bg-cardbtn w-40 cursor-pointer rounded-2xl p-2 text-2xl text-white"
           >
             back

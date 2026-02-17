@@ -11,11 +11,9 @@ function Cart({ page }) {
       <div className="flex flex-1 flex-col gap-4">
         <h1 className="text-4xl text-white">Shopping Cart</h1>
         <div className="flex h-fit flex-col gap-4 overflow-auto pr-2">
-          <Cartproduct />
           {user.map((goods) => (
             <Cartproduct
               img={goods.images[0]}
-              desc={goods.description}
               price={goods.price}
               numb={goods.number}
               title={goods.title}
