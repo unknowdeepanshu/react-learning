@@ -11,6 +11,7 @@ function Allproduct() {
   const data = useSelector((state) => state.product);
   // if (data.product.products) console.log(data.product.products);
   let goods = data.product.products;
+  console.log("goods", goods);
 
   const tagsList = [...new Set(goods.flatMap((good) => good.tags))].map(
     (tag) => ({

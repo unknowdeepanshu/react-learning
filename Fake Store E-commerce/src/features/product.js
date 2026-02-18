@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk, nanoid } from "@reduxjs/toolkit";
+import productStore from "../productStore";
 
 const initialState = {
   product: null,
@@ -6,32 +7,16 @@ const initialState = {
   user: [],
 };
 
-// export const productFetch = createAsyncThunk("fetchAllproduct", async () => {
-//   const datas = await fetch(
-//     "https://dummyjson.com/products?limit=500&select=availabilityStatus,brand,category,description,discountPercentage,images,price,rating,returnPolicy,reviews,stock,shippingInformation,tags,thumbnail,tags,title",
-//   );
-//   console.log("this working");
-//   return await datas.json();
-// });
 export const productFetch = createAsyncThunk("fetchAllproduct", async () => {
-  if (localStorage.getItem("products")) {
-    const data = JSON.parse(localStorage.getItem("products"));
-    console.log("local data", data);
-    return data;
-  } else {
-    const res = await fetch(
-      "https://dummyjson.com/products?limit=500&select=availabilityStatus,brand,category,description,discountPercentage,images,price,rating,returnPolicy,reviews,stock,shippingInformation,tags,thumbnail,tags,title",
-    );
-    console.log("local data", data);
+  //this is api for fetch data for product
+  // const res = await fetch(
+  //     "https://dummyjson.com/products?limit=500&select=availabilityStatus,brand,category,description,discountPercentage,images,price,rating,returnPolicy,reviews,stock,shippingInformation,tags,thumbnail,tags,title",
+  //   );
+  //   console.log("local data", data);
+  // const data = await res.json();
+  // return data;
 
-    const data = await res.json();
-
-    localStorage.setItem("products", JSON.stringify(data));
-
-    return data;
-  }
-  // const cached = localStorage.getItem("products");
-  // if (cached) return JSON.parse(cached);
+  return productStore[0];
 });
 
 export const productSlice = createSlice({
