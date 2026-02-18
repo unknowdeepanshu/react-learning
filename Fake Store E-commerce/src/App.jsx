@@ -1,11 +1,11 @@
-import Allproduct from "./components/allproduct/listproduct";
+import Allproduct from "./components/allproduct/listProduct";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
 import Login from "./components/login/login";
 import Card from "./components/product card/card";
 import Profile from "./components/profile/profile";
 import Singleproduct from "./components/single product page/singleProduct";
-import Cartproduct from "./components/total price/option/cart/cart product/cartproduct";
+import Cartproduct from "./components/total price/option/cart/cart product/cartProduct";
 import Shipproduct from "./components/total price/shiping/cart product/shipproduct";
 import Shipping from "./components/total price/shiping/shiping";
 import Totalprice from "./components/total price/totalprice";

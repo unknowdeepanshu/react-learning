@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from "react-router";
-import Cartproduct from "./cart product/cartproduct";
+import Cartproduct from "./cart product/cartProduct";
 import Summary from "../../shiping/sumarry";
 import { useSelector } from "react-redux";
 
