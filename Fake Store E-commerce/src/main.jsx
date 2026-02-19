@@ -9,7 +9,7 @@ import App from "./App.jsx";
 import { Provider } from "react-redux";
 import { store } from "./app/store.js";
 import AppInitializer from "./getdata.jsx";
-import Allproduct from "./components/allproduct/listproduct.jsx";
+import Allproduct from "./components/allproduct/listProduct.jsx";
 
 const router = createBrowserRouter([
   {

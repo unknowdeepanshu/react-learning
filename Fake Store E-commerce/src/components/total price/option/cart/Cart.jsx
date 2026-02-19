@@ -13,6 +13,7 @@ function Cart({ page }) {
         <div className="flex h-fit flex-col gap-4 overflow-auto pr-2">
           {user.map((goods) => (
             <Cartproduct
+              id={goods.id}
               img={goods.images[0]}
               price={goods.price}
               numb={goods.number}

@@ -82,12 +82,13 @@ function Singleproduct() {
                 >
                   Add To Cart
                 </button>
-                <button
-                  onClick={(e) => dispatch(removeProduct(singleProduct.id))}
-                  className="bg-30blue rounded-3xl p-2 hover:cursor-pointer"
+
+                <Link
+                  to={`/you-cart`}
+                  className="bg-30blue rounded-3xl p-2 text-center hover:cursor-pointer"
                 >
-                  Buy now
-                </button>
+                  <button>Buy now</button>
+                </Link>
               </div>
             </div>
           </div>

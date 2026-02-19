@@ -39,7 +39,18 @@ export const productSlice = createSlice({
     },
     removeProduct: (state, action) => {
       console.log("this remove", action.payload);
-      state.user = state.user.filter((goods) => goods.id !== action.payload);
+      const exitsProduct = state.user.find(
+        (goods) => goods.id === action.payload.id,
+      );
+      if (exitsProduct) {
+        exitsProduct.number -= 1;
+        if (exitsProduct.number === 0) {
+          state.user = state.user.filter(
+            (goods) => goods.id !== action.payload.id,
+          );
+        }
+        return;
+      }
     },
   },
   extraReducers: (builder) => {

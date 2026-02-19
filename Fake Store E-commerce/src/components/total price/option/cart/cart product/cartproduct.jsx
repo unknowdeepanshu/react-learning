@@ -1,7 +1,11 @@
 import { IconChevronUp, IconChevronDown } from "@tabler/icons-react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router";
+import { addProduct, removeProduct } from "../../../../../features/product";
 
-function Cartproduct({ img, numb, title, price }) {
+function Cartproduct({ img, numb, title, price, id }) {
+  console.log("this id", id);
+  const dispatch = useDispatch();
   return (
     <>
       <div className="flex max-w-lg justify-between">
@@ -20,10 +24,16 @@ function Cartproduct({ img, numb, title, price }) {
               {numb} Pcs
             </h1>
             <div className="flex flex-col">
-              <button className="border-Cline flex h-5 cursor-pointer items-center border-2">
+              <button
+                onClick={(e) => dispatch(addProduct(id))}
+                className="border-Cline flex h-5 cursor-pointer items-center border-2"
+              >
                 <IconChevronUp stroke={2} />
               </button>
-              <button className="border-Cline flex h-5 cursor-pointer items-center border-2">
+              <button
+                onClick={(e) => dispatch(removeProduct(id))}
+                className="border-Cline flex h-5 cursor-pointer items-center border-2"
+              >
                 <IconChevronDown stroke={2} />
               </button>
             </div>
