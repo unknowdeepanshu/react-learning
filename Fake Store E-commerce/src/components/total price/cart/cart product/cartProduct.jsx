@@ -1,9 +1,11 @@
 import { IconChevronUp, IconChevronDown } from "@tabler/icons-react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router";
-import { addProduct, removeProduct } from "../../../../../features/product";
+import { addProduct, removeProduct } from "../../../../features/product";
 
 function Cartproduct({ img, numb, title, price, id }) {
+  const [add, setAdd] = useState(numb);
+
   console.log("this id", id);
   const dispatch = useDispatch();
   return (
