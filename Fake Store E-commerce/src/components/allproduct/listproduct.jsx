@@ -34,6 +34,7 @@ function Allproduct() {
     // filter by tag
     if (tag !== "All") {
       filtered = filtered.filter((good) => good.tags?.includes(tag));
+      console.log("filtered tags", filtered);
     } else {
       filtered = goods.filter((good) => {
         return good.tags.find((t) => t === tag);
@@ -41,19 +42,36 @@ function Allproduct() {
     }
 
     // filter by stock
-    if (stock !== "All") {
+    if (stock == "All") {
       filtered = filtered.filter((good) =>
         good.availabilityStatus?.includes(stock),
       );
     } else if (stock === "Low Stock") {
-      filtered = goods.filter((good) => {
-        return good.availabilityStatus.includes(stock);
-      });
+      if (tag !== "All") {
+        const tagArray = filtered.filter((good) => good.tags?.includes(tag));
+        const stockArray = tagArray.filter((good) => {
+          return good.availabilityStatus.includes(stock);
+        });
+        filtered = [...stockArray];
+      } else {
+        filtered = goods.filter((good) => {
+          return good.availabilityStatus.includes(stock);
+        });
+      }
     } else if (stock === "In Stock") {
-      filtered = goods.filter((good) => {
-        return good.availabilityStatus.includes(stock);
-      });
+      if (tag !== "All") {
+        const tagArray = filtered.filter((good) => good.tags?.includes(tag));
+        const stockArray = tagArray.filter((good) => {
+          return good.availabilityStatus.includes(stock);
+        });
+        filtered = [...stockArray];
+      } else {
+        filtered = goods.filter((good) => {
+          return good.availabilityStatus.includes(stock);
+        });
+      }
     }
+    console.log(stock);
     setTagArray(filtered);
   }, [goods, tag, stock]);
   return (

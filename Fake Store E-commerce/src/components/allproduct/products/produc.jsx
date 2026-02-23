@@ -39,6 +39,7 @@ function Products({ product, TagArray }) {
         ? filteredProducts.map((good) => (
             <Link key={good.id} to={`/product/${good.title}`}>
               <Card
+                stock={good.availabilityStatus}
                 Title={good.title}
                 src={good.images?.[0]}
                 dollar={good.price}

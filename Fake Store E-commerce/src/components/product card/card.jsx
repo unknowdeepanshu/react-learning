@@ -9,6 +9,7 @@ function Card(props) {
             {props.Title || "product title"}
           </h1>
         </div>
+        <span className="text-white">{props.stock}</span>
         <div className="w-10">
           <button className="bg-cardbtn hover:bg-bgprimary cursor-pointer rounded-md p-1 text-white">
             ${props.dollar || "300"}

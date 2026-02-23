@@ -77,7 +77,7 @@ function Filter({ list, onStockChange, stock, onTagChange }) {
                     checked={stock === "Low Stock"}
                     onChange={(e) => onStockChange(e.target.value)}
                   />
-                  Out stock
+                  Low stock
                 </label>
               </div>
             </article>
