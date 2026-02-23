@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Footer() {
   return (
     <footer className="bg-30blue border-y">
@@ -15,22 +17,20 @@ export default function Footer() {
               </h2>
               <ul className="font-medium text-gray-500">
                 <li className="mb-4">
-                  <a
-                    href="https://github.com/unknowdeepanshu"
+                  <Link
+                    to="https://github.com/unknowdeepanshu"
                     className="hover:underline"
-                    target="_blank"
-                    rel="noreferrer"
                   >
                     Github
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://x.com/DipanshuVi6799"
+                  <Link
+                    to="https://x.com/DipanshuVi6799"
                     className="hover:underline"
                   >
                     twitter
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

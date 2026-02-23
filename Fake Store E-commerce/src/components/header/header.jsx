@@ -5,7 +5,7 @@ function Header() {
   return (
     <>
       <div className="bg-primary flex items-center justify-center">
-        <div className="m-2 mx-10 flex h-10 w-[79rem] justify-between py-4">
+        <div className="m-2 mx-10 flex h-10 justify-between py-4">
           <div className="flex flex-1 gap-8">
             <div className="bg-30blue flex items-center rounded-md">
               <img src="/logo.png" width="100rem" />
