@@ -49,10 +49,11 @@ function Allproduct() {
     } else if (stock === "Low Stock") {
       if (tag !== "All") {
         const tagArray = filtered.filter((good) => good.tags?.includes(tag));
-        const stockArray = tagArray.filter((good) => {
+        const stockArray = filtered.filter((good) => {
           return good.availabilityStatus.includes(stock);
         });
-        filtered = [...stockArray];
+        filtered = [...tagArray, ...stockArray];
+        console.log("this low stock", filtered);
       } else {
         filtered = goods.filter((good) => {
           return good.availabilityStatus.includes(stock);
