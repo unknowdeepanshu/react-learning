@@ -24,6 +24,7 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action) => {
+      console.log("this remove", action.payload.id);
       const exitsProduct = state.user.find(
         (goods) => goods.id === action.payload.id,
       );
@@ -35,19 +36,37 @@ export const productSlice = createSlice({
         ...action.payload,
         number: 1,
       });
-      console.log(state.user);
     },
-    removeProduct: (state, action) => {
+    decreaseProduct: (state, action) => {
       console.log("this remove", action.payload);
       const exitsProduct = state.user.find(
-        (goods) => goods.id === action.payload.id,
+        (goods) => goods.id === action.payload,
       );
       if (exitsProduct) {
         exitsProduct.number -= 1;
+        console.log("exits product");
         if (exitsProduct.number === 0) {
           state.user = state.user.filter(
             (goods) => goods.id !== action.payload.id,
           );
+          console.log("this for checking", state.user);
+        }
+        return;
+      }
+    },
+    increaseProduct: (state, action) => {
+      console.log("this remove", action.payload);
+      const exitsProduct = state.user.find(
+        (goods) => goods.id === action.payload,
+      );
+      if (exitsProduct) {
+        exitsProduct.number += 1;
+        console.log("exits product");
+        if (exitsProduct.number === 0) {
+          state.user = state.user.filter(
+            (goods) => goods.id !== action.payload.id,
+          );
+          console.log("this for checking", state.user);
         }
         return;
       }
@@ -63,7 +82,7 @@ export const productSlice = createSlice({
   },
 });
 
-export const { addProduct, increaseProduct, decreaseProduct, removeProduct } =
+export const { addProduct, increaseProduct, decreaseProduct } =
   productSlice.actions;
 
 export default productSlice.reducer;

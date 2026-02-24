@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 function Cart({ page }) {
   const user = useSelector((state) => state.product.user);
   console.log("this user", user);
+
   return (
     <>
       <div className="flex flex-1 flex-col gap-4">
@@ -18,6 +19,9 @@ function Cart({ page }) {
               price={goods.price}
               numb={goods.number}
               title={goods.title}
+              addProducts={() => addProducts(goods.id)}
+              subProduct={() => subProduct(goods.id)}
+              setNumber={() => setAdd(goods.number)}
             />
           ))}
         </div>

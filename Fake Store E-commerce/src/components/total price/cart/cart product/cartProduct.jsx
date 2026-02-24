@@ -1,13 +1,27 @@
 import { IconChevronUp, IconChevronDown } from "@tabler/icons-react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router";
-import { addProduct, removeProduct } from "../../../../features/product";
+
+import { useSelector, useDispatch } from "react-redux";
+import { increaseProduct, decreaseProduct } from "../../../../features/product";
+import { useState } from "react";
 
 function Cartproduct({ img, numb, title, price, id }) {
-  const [add, setAdd] = useState(numb);
+  const [add, setAdd] = useState(0);
 
-  console.log("this id", id);
   const dispatch = useDispatch();
+  // console.log("this product number", add);
+  function addProducts(id) {
+    console.log("this working");
+    dispatch(increaseProduct(id));
+    setAdd(add + 1);
+  }
+  function subProduct(id) {
+    console.log("this working");
+    if (numb === 0) return;
+    dispatch(decreaseProduct(id));
+    setAdd(add - 1);
+  }
+
   return (
     <>
       <div className="flex max-w-lg justify-between">
@@ -27,13 +41,13 @@ function Cartproduct({ img, numb, title, price, id }) {
             </h1>
             <div className="flex flex-col">
               <button
-                onClick={(e) => dispatch(addProduct(id))}
+                onClick={() => addProducts(id)}
                 className="border-Cline flex h-5 cursor-pointer items-center border-2"
               >
                 <IconChevronUp stroke={2} />
               </button>
               <button
-                onClick={(e) => dispatch(removeProduct(id))}
+                onClick={() => subProduct(id)}
                 className="border-Cline flex h-5 cursor-pointer items-center border-2"
               >
                 <IconChevronDown stroke={2} />

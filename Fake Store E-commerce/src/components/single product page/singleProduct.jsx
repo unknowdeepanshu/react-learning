@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
 import Card from "../product card/card";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, removeProduct } from "../../features/product";
+import { addProduct } from "../../features/product";
 import { useEffect, useState } from "react";
 import CardSkeleton from "../product card/cardSkeleton";
 
