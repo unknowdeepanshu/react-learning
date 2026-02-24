@@ -12,13 +12,14 @@ function Summary() {
       initialValue,
     ),
   );
-  console.log("this sum", sumWithInitial + 20);
+  // console.log("this sum", sumWithInitial + 20);
   return (
     <div className="flex flex-1 flex-col gap-4">
       <h1 className="text-4xl text-white">Summary</h1>
       <div className="flex h-fit flex-col gap-4 overflow-auto pr-2">
         {user.map((goods) => (
           <Shipproduct
+            id={goods.id}
             img={goods.images[0]}
             title={goods.title}
             price={goods.number * goods.price}
