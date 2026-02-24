@@ -45,7 +45,9 @@ function Summary() {
           <h1 className="text-3xl">Total</h1>
         </div>
         <div className="flex-1 cursor-pointer rounded-2xl p-2 text-right text-2xl text-white">
-          <h1 className="text-3xl">${sumWithInitial + 20}</h1>
+          <h1 className="text-3xl">
+            ${sumWithInitial === 0 ? 0 : sumWithInitial + 20}
+          </h1>
         </div>
       </div>
     </div>
