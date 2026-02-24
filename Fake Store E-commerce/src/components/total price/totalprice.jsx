@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Cart from "./option/cart/Cart";
+import Cart from "./cart/Cart";
 import Shipping from "./shiping/shiping";
 import Payment from "./pyament/payment";
 
