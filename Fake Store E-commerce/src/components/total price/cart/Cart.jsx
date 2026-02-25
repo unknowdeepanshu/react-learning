@@ -40,7 +40,7 @@ function Cart({ page }) {
           </button>
         </div>
       </div>
-      <Summary />
+      <Summary pages={page} />
     </>
   );
 }

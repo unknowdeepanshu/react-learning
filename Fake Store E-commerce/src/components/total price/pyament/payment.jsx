@@ -1,7 +1,13 @@
-import Shipproduct from "../shiping/cart product/shipproduct";
 import Summary from "../shiping/sumarry";
-
+import { useState } from "react";
 function Payment({ page }) {
+  const [checkPay, setCheckPay] = useState("");
+  function handlePayment() {
+    if (checkPay === "Pay pal" || checkPay === "Credit") {
+      console.log("you buy it");
+    }
+  }
+
   return (
     <>
       <div className="flex h-screen flex-1 flex-col gap-8">
@@ -13,6 +19,9 @@ function Payment({ page }) {
                 type="radio"
                 name="payment"
                 className="accent-bghover ml-4 h-8 w-10"
+                value="Pay pal"
+                checked={checkPay === "Pay pal"}
+                onChange={() => setCheckPay("Pay pal")}
               />
               <div className="flex flex-col gap-3">
                 <h1 className="text-[14px]">Pay pal</h1>
@@ -30,6 +39,9 @@ function Payment({ page }) {
                     type="radio"
                     name="payment"
                     className="accent-bghover ml-4 h-8 w-10"
+                    value="Credit"
+                    checked={checkPay === "Credit"}
+                    onChange={() => setCheckPay("Credit")}
                   />
                   <div className="flex flex-col gap-3">
                     <h1 className="text-[14px]">Credit Card</h1>
@@ -83,12 +95,15 @@ function Payment({ page }) {
           >
             back
           </button>
-          <button className="bg-cardbtn w-40 cursor-pointer rounded-2xl p-2 text-2xl text-white">
+          <button
+            onClick={handlePayment}
+            className="bg-cardbtn w-40 cursor-pointer rounded-2xl p-2 text-2xl text-white"
+          >
             buy now
           </button>
         </div>
       </div>
-      <Summary />
+      <Summary pages={page} />
     </>
   );
 }

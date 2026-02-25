@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Shipproduct from "./cart product/shipproduct";
 
-function Summary() {
+function Summary({ pages }) {
   const user = useSelector((state) => state.product.user);
   const subTotal = user.map((goods) => goods.price * goods.number);
 
@@ -12,6 +12,10 @@ function Summary() {
       initialValue,
     ),
   );
+  if (sumWithInitial === 0) {
+    pages("cart");
+  }
+
   // console.log("this sum", sumWithInitial + 20);
   return (
     <div className="flex flex-1 flex-col gap-4">
