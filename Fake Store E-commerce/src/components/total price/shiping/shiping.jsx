@@ -1,16 +1,27 @@
+import Pop from "../pop/selectInput";
 import Summary from "./sumarry";
 import { useState } from "react";
+
 function Shipping({ page }) {
   const [shippingMethod, setShippingMethod] = useState("");
+  const [open, setOpen] = useState(false);
   function handleShippingChange() {
     if (shippingMethod === "free" || shippingMethod === "nextDay") {
       page("payment");
+      setOpen(false);
+    } else {
+      setOpen(true);
+
+      setTimeout(() => {
+        setOpen(false);
+      }, 4000);
     }
   }
   return (
     <>
       <div className="flex h-screen flex-1 flex-col gap-8">
         <h1 className="text-4xl text-white">Shopping Cart</h1>
+        {open && <Pop open={setOpen} />}
         <form className="flex h-70 flex-col gap-4 overflow-auto pr-2">
           <div className="flex gap-4">
             <input

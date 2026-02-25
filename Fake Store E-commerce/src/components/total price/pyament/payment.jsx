@@ -1,17 +1,24 @@
+import Pop from "../pop/selectInput";
 import Summary from "../shiping/sumarry";
 import { useState } from "react";
 function Payment({ page }) {
   const [checkPay, setCheckPay] = useState("");
+  const [open, setOpen] = useState(false);
   function handlePayment() {
     if (checkPay === "Pay pal" || checkPay === "Credit") {
       console.log("you buy it");
+    } else {
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 4000);
     }
   }
-
   return (
     <>
       <div className="flex h-screen flex-1 flex-col gap-8">
         <h1 className="text-4xl text-white">Payment method</h1>
+        {open && <Pop open={setOpen} />}
         <form className="flex flex-col gap-4 pr-2">
           <div className="flex h-32 flex-1 flex-col gap-2">
             <div className="border-bghover focus:border-bghover bg-bghover/50 flex items-center gap-4 rounded-md border-2 p-3 text-white transition-colors focus:outline-none">
