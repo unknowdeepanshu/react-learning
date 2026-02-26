@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useCallback, useEffect } from "react";
-import Filter from "./filter/filters";
-import Paggination from "./paggination/pagginations";
-import Products from "./products/produc";
+import Filter from "./filter/filters.jsx";
+import Paggination from "./paggination/pagginations.jsx";
+import Products from "./products/produc.jsx";
 
 function Allproduct() {
   const [stock, setStock] = useState("All");
