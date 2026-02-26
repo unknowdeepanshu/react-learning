@@ -5,17 +5,17 @@ function Header() {
   return (
     <>
       <div className="bg-primary flex items-center justify-center">
-        <div className="m-2 mx-10 flex h-10 justify-between py-4">
-          <div className="flex flex-1 gap-8">
-            <div className="flex items-center rounded-md">
-              <img src="/logo.png" className="w-14" />
-            </div>
-            <input
-              type="text"
-              className="bg-search h-8 w-md self-center rounded-4xl p-4 text-white"
-              placeholder="search"
-            />
+        <div className="flex flex-1 gap-8">
+          <div className="flex items-center rounded-md">
+            <img src="/logo.png" className="w-14" />
           </div>
+          <input
+            type="text"
+            className="bg-search h-8 w-3xs self-center rounded-4xl p-4 text-white"
+            placeholder="search"
+          />
+        </div>
+        <div className="m-2 mx-10 flex h-10 justify-between py-4">
           <div className="flex flex-1 items-center justify-end gap-8">
             <div className="flex">
               <Link
@@ -37,7 +37,6 @@ function Header() {
               className="hover:bg-bgprimary hover:text-10blue bg-bghover flex items-center gap-2 rounded-md p-2 px-10 text-[14px] text-white hover:cursor-pointer"
             >
               <IconGardenCart stroke={1.5} />
-              Your cart
             </Link>
             <button className="hover:border-10blue flex h-8 w-8 cursor-pointer justify-center rounded-3xl bg-white p-1 hover:border-2">
               {" "}
