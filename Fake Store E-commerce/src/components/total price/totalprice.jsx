@@ -34,7 +34,7 @@ function Totalprice() {
         </div>
       </div>
       <div className="bg-60sencondary h-screen">
-        <div className="mx-auto flex h-screen w-full max-w-7xl gap-4 px-10 py-6 lg:py-8">
+        <div className="mx-auto flex h-screen w-full max-w-7xl gap-4 px-10 py-8 lg:py-8">
           {page === "shipping" && <Shipping page={setPage} />}
           {page === "payment" && <Payment page={setPage} />}
           {page === "cart" && <Cart page={setPage} />}
