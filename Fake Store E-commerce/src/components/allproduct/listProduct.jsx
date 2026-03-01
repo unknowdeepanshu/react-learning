@@ -8,6 +8,8 @@ function Allproduct() {
   const [stock, setStock] = useState("All");
   const [tag, setTag] = useState("All");
   const [tagArray, setTagArray] = useState([]);
+  const [pricerange, setPriceRange] = useState(0);
+
   const data = useSelector((state) => state.product);
   // if (data.product.products) console.log(data.product.products);
   let goods = data.product.products;
@@ -29,52 +31,30 @@ function Allproduct() {
   ];
   if (!goods) return;
 
-  let filtered = goods;
   useEffect(() => {
-    // filter by tag
-    if (tag !== "All") {
-      filtered = filtered.filter((good) => good.tags?.includes(tag));
-      console.log("filtered tags", filtered);
-    } else {
-      filtered = goods.filter((good) => {
-        return good.tags.find((t) => t === tag);
-      });
+    if (!goods) return;
+
+    let filtered = goods;
+
+    // 1️⃣ filter by price
+    if (pricerange > 0) {
+      filtered = filtered.filter((good) => good.price <= pricerange);
     }
 
-    // filter by stock
-    if (stock == "All") {
+    // 2️⃣ filter by tag
+    if (tag !== "All") {
+      filtered = filtered.filter((good) => good.tags?.includes(tag));
+    }
+
+    // 3️⃣ filter by stock
+    if (stock !== "All") {
       filtered = filtered.filter((good) =>
         good.availabilityStatus?.includes(stock),
       );
-    } else if (stock === "Low Stock") {
-      if (tag !== "All") {
-        const tagArray = filtered.filter((good) => good.tags?.includes(tag));
-        const stockArray = filtered.filter((good) => {
-          return good.availabilityStatus.includes(stock);
-        });
-        filtered = [...tagArray, ...stockArray];
-        console.log("this low stock", filtered);
-      } else {
-        filtered = goods.filter((good) => {
-          return good.availabilityStatus.includes(stock);
-        });
-      }
-    } else if (stock === "In Stock") {
-      if (tag !== "All") {
-        const tagArray = filtered.filter((good) => good.tags?.includes(tag));
-        const stockArray = tagArray.filter((good) => {
-          return good.availabilityStatus.includes(stock);
-        });
-        filtered = [...stockArray];
-      } else {
-        filtered = goods.filter((good) => {
-          return good.availabilityStatus.includes(stock);
-        });
-      }
     }
-    console.log(stock);
+
     setTagArray(filtered);
-  }, [goods, tag, stock]);
+  }, [goods, tag, stock, pricerange]);
   return (
     <>
       <div className="bg-60sencondary">
@@ -95,13 +75,14 @@ function Allproduct() {
                 list={tagsList}
                 stock={stock}
                 onStockChange={setStock}
+                price={setPriceRange}
               />
             </div>
             <div className="border-10blue relative bottom-8 border-l-4"></div>
             <div className="flex flex-1 flex-col">
               <div className="flex-1 p-4">
                 <div className="flex flex-wrap gap-2">
-                  <Products product={goods} TagArray={tagArray} stock={stock} />
+                  <Products product={goods} TagArray={tagArray} />
                 </div>
               </div>
               <Paggination num={number} />

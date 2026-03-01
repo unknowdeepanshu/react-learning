@@ -3,7 +3,10 @@ import {
   IconChevronDown,
   IconChevronLeft,
 } from "@tabler/icons-react";
-function Filter({ list, onStockChange, stock, onTagChange }) {
+import { useState } from "react";
+
+function Filter({ list, onStockChange, stock, onTagChange, price }) {
+  const [number, setNumber] = useState(0);
   return (
     <>
       <ul className="mx-auto flex max-w-[280px] flex-col gap-1">
@@ -21,28 +24,22 @@ function Filter({ list, onStockChange, stock, onTagChange }) {
             </summary>
 
             <article className="pb-4">
-              <ul className="mt-2 flex flex-col gap-4 pl-2">
-                <li className="flex gap-2">
-                  <div className="flex flex-1 flex-col">
-                    <div className="flex justify-between">
-                      <span className="ml-3">min</span>
-                      <span className="mr-3">max</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <input
-                        type="number"
-                        className="w-18 border-2 border-solid border-[#2D403F] bg-[#2D403F] p-2 text-white transition-colors duration-100 outline-none focus:border-[#2D403F]"
-                        placeholder="0"
-                      />
-                      <input
-                        type="number"
-                        className="w-18 border-2 border-solid border-[#2D403F] bg-[#2D403F] p-2 text-white transition-colors duration-100 outline-none focus:border-[#2D403F]"
-                        placeholder="1000"
-                      />
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <div className="flex flex-col gap-2">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  className="accent-bghover w-full"
+                  onChange={(e) => setNumber(e.target.value)}
+                />
+                <span className="text-sm">{number} $</span>
+              </div>
+              <button
+                onClick={() => price(number)}
+                className="bg-cardbtn w-fit cursor-pointer rounded-md p-2 text-center text-white"
+              >
+                Apply
+              </button>
             </article>
           </details>
         </li>
