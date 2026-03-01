@@ -1,19 +1,59 @@
 import { IconGardenCart, IconUser } from "@tabler/icons-react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router";
+import { useSearchParams } from "react-router";
 
 function Header() {
+  const [query, setQuery] = useState("");
+  const [params] = useSearchParams();
+  const searchQuery = params.get("search") || "";
+  const data = useSelector((state) => state.product);
+  const goods = data.product.products;
+  console.log("this from header", goods);
+  const searchResults = goods.filter((good) =>
+    good.title.toLowerCase().includes(query.toLowerCase()),
+  );
+  if (searchQuery) {
+    filtered = filtered.filter((good) =>
+      good.title.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
+  }
   return (
     <>
       <div className="bg-primary flex items-center justify-center">
         <div className="flex flex-1 gap-8">
           <div className="flex items-center rounded-md">
-            <img src="/logo.png" className="w-14" />
+            <div className="ml-4">
+              <img src="/logo.png" className="w-14" />
+            </div>
           </div>
-          <input
-            type="text"
-            className="bg-search h-8 w-3xs self-center rounded-4xl p-4 text-white"
-            placeholder="search"
-          />
+          <div className="flex flex-col items-center justify-center">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="bg-search h-8 w-3xs self-center rounded-4xl p-4 text-white"
+              placeholder="Search products..."
+            />
+            {query && (
+              <div className="absolute top-14 w-72 rounded-md bg-white text-black shadow-lg">
+                {searchResults.slice(0, 5).map((item) => (
+                  <Link
+                    key={item.id}
+                    to={`/product/${item.title}`}
+                    className="block p-2 hover:bg-gray-200"
+                    onClick={() => setQuery("")}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+                {searchResults.length === 0 && (
+                  <div className="p-2 text-gray-500">No products found</div>
+                )}
+              </div>
+            )}
+          </div>
         </div>
         <div className="m-2 mx-10 flex h-10 justify-between py-4">
           <div className="flex flex-1 items-center justify-end gap-8">
