@@ -14,7 +14,6 @@ function Allproduct() {
   // if (data.product.products) console.log(data.product.products);
   let goods = data.product.products;
   // console.log("goods", goods);
-
   const tagsList = [...new Set(goods.flatMap((good) => good.tags))].map(
     (tag) => ({
       name: tag,
@@ -29,7 +28,6 @@ function Allproduct() {
   //     num: "2",
   //   },
   // ];
-  if (!goods) return;
 
   useEffect(() => {
     if (!goods) return;
