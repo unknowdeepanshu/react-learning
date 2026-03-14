@@ -15,7 +15,7 @@ function Header() {
     good.title.toLowerCase().includes(query.toLowerCase()),
   );
   if (searchQuery) {
-    filtered = filtered.filter((good) =>
+    const filtered = filtered.filter((good) =>
       good.title.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   }

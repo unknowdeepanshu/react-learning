@@ -15,13 +15,13 @@ export default function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-white uppercase">
                 Follow us
               </h2>
-              <ul className="flex gap-4 font-medium text-gray-500">
+              <ul className="gap-4 font-medium text-gray-500">
                 <li className="mb-4">
                   <Link
                     to="https://github.com/unknowdeepanshu"
                     className="hover:underline"
                   >
-                    <IconBrandGithub stroke={2} />
+                    Github
                   </Link>
                 </li>
                 <li>
@@ -29,7 +29,7 @@ export default function Footer() {
                     to="https://x.com/DipanshuVi6799"
                     className="hover:underline"
                   >
-                    <IconBrandX stroke={2} />{" "}
+                    Twitter
                   </Link>
                 </li>
               </ul>

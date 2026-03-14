@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useState, useCallback, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 import Filter from "./filter/filters.jsx";
 import Paggination from "./paggination/pagginations.jsx";
 import Products from "./products/produc.jsx";
@@ -21,14 +21,14 @@ function Allproduct() {
     }),
   );
 
-  const number = [
-    {
-      num: "1",
-    },
-    {
-      num: "2",
-    },
-  ];
+  // const number = [
+  //   {
+  //     num: "1",
+  //   },
+  //   {
+  //     num: "2",
+  //   },
+  // ];
   if (!goods) return;
 
   useEffect(() => {
@@ -85,7 +85,7 @@ function Allproduct() {
                   <Products product={goods} TagArray={tagArray} />
                 </div>
               </div>
-              <Paggination num={number} />
+              {/* <Paggination num={number} /> */}
             </div>
           </div>
         </div>
